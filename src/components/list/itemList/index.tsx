@@ -16,8 +16,8 @@ export default function ItemList (
     } : IItemListProps  ) {
     return (
         <li  
-            className={`${style.item} ${selected ? style.selectedItem : ''}`}
-            onClick={() => selectTask(
+            className={`${style.item} ${selected ? style.selectedItem : ''} ${completed ? style.completedItem : ''}`}
+            onClick={() => !completed && selectTask(
                 {
                     task, 
                     time,
@@ -33,6 +33,7 @@ export default function ItemList (
             <span>
                 {time}
             </span>
+            {completed && <span className={style.completed} aria-label='completedItem'></span>}
         </li>
     )
 }

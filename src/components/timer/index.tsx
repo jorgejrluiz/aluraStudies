@@ -6,10 +6,11 @@ import { useEffect, useState } from "react";
 import { timeToSeconds } from "../../common/utils/time";
 
 interface WatchProps {
-    task: ITask | undefined
+    task: ITask | undefined,
+    finishTask: () => void
 }
 
-export default function Timer( {task} : WatchProps) {
+export default function Timer( {task, finishTask} : WatchProps) {
     const [timer, setTempo] = useState<number>();
 
     useEffect(() => {
@@ -24,6 +25,7 @@ export default function Timer( {task} : WatchProps) {
                 setTempo(counter -1);
                 return regressCounter(counter - 1);
             }
+            finishTask();
         },
         1000);
     } 
