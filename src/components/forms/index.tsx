@@ -1,12 +1,13 @@
 import React from 'react';
 import Button from '../button';
+import './style.scss'
 
 
 class Forms extends React.Component {
     render() {
         return (
-            <form>
-                <div>
+            <form className='newTask'>
+                <div className='inputContainer'>
                     <label
                     htmlFor='task'>
                         Please insert a new category to learn
@@ -20,7 +21,7 @@ class Forms extends React.Component {
                     >
                     </input>
                 </div>
-                <div>
+                <div className='inputContainer'>
                     <label htmlFor="time"></label>
                     <input
                         type='time'
@@ -32,7 +33,7 @@ class Forms extends React.Component {
                         required>
                     </input>
                 </div>
-
+                
                 <Button></Button>
             </form>
         );
