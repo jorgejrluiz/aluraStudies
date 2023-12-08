@@ -18,6 +18,16 @@ export default function Timer( {task} : WatchProps) {
         }
     }, [task])
 
+    function regressCounter (counter: number = 0) {
+        setTimeout(() => {
+            if( counter > 0 ) {
+                setTempo(counter -1);
+                return regressCounter(counter - 1);
+            }
+        },
+        1000);
+    } 
+
     return (
         <div className={style.timer}>
             <p  className={style.title}> Choose one task and start the timer</p>
@@ -26,6 +36,7 @@ export default function Timer( {task} : WatchProps) {
             </div>
             <Button
                 text="Start"
+                onClick={() => regressCounter(timer)}
             />
         </div>
     )
