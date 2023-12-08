@@ -7,6 +7,10 @@ export function timeToSeconds(time : string) {
     return hoursInSecond + minutesInSecond + Number(seconds);
 }
 
-export function secondsToMinutes(seconds: number) {
-    return 0;
+export function getMinutes(seconds: number) {
+    return Math.floor(seconds / 60);
+}
+
+export function getSeconds(seconds: number) {
+    return seconds % 60;
 }

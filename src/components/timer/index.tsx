@@ -22,7 +22,7 @@ export default function Timer( {task} : WatchProps) {
         <div className={style.timer}>
             <p  className={style.title}> Choose one task and start the timer</p>
             <div  className={style.watchWrapper}>
-                <Watch ></Watch>
+                <Watch timer={timer}></Watch>
             </div>
             <Button
                 text="Start"
